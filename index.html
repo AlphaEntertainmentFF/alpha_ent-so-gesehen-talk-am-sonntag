@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="description" content="ALPHA Entertainment aus Köln produziert im Auftrag von Sat.1 das Gesprächsformat So gesehen – Talk am Sonntag.">
+  <title>So gesehen – Talk am Sonntag | ALPHA Entertainment</title>
+  <style>
+    :root {
+      --navy: #173b20;
+      --blue: #377b24;
+      --teal: #b4d000;
+      --pale: #f4f7e3;
+      --paper: #fff;
+      --ink: #26351d;
+      --muted: #65705b;
+      --line: #e0e8c8;
+      --max: 1120px;
+      --sans: Arial, Helvetica, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; color: var(--ink); background: var(--paper); font-family: var(--sans); line-height: 1.65; }
+    a { color: inherit; }
+    .wrap { width: min(calc(100% - 44px), var(--max)); margin-inline: auto; }
+    .topbar { height: 6px; background: #b4d000; }
+    header { border-bottom: 1px solid var(--line); background: #fff; }
+    .header-inner { min-height: 96px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .alpha-brand { display: inline-flex; align-items: center; gap: 15px; text-decoration: none; color: var(--navy); }
+    .alpha-symbol { width: 220px; max-width: 42vw; height: auto; display: block; flex: 0 1 220px; }
+    .alpha-word { font-size: 22px; font-weight: 800; letter-spacing: .045em; line-height: 1.1; }
+    .alpha-sub { display: block; margin-top: 5px; color: var(--muted); font-size: 9px; font-weight: 700; letter-spacing: .19em; }
+    .header-label { font-size: 11px; text-transform: uppercase; letter-spacing: .14em; color: var(--muted); text-align: right; }
+    .hero { position: relative; overflow: hidden; background: var(--navy); color: #fff; }
+    .hero::after { content: ""; position: absolute; width: 420px; height: 420px; border: 1px solid rgba(255,255,255,.14); border-radius: 50%; right: -130px; top: -170px; box-shadow: 0 0 0 45px rgba(255,255,255,.025), 0 0 0 90px rgba(255,255,255,.02); }
+    .hero-inner { position: relative; z-index: 1; padding: 76px 0 80px; max-width: 800px; }
+    .kicker { color: #d4ee29; text-transform: uppercase; font-size: 11px; letter-spacing: .18em; font-weight: 700; }
+    h1, h2, h3, p { margin-top: 0; }
+    h1 { font-size: clamp(38px, 6vw, 66px); line-height: 1.08; letter-spacing: -.035em; margin: 18px 0 22px; max-width: 780px; }
+    .hero p { max-width: 680px; color: #e1e9ec; font-size: clamp(16px, 2vw, 20px); margin-bottom: 0; }
+    .hero-meta { display: flex; gap: 12px; align-items: center; margin-top: 28px; font-size: 12px; color: #c5d7dd; }
+    .hero-meta::before { content: ""; width: 32px; height: 2px; background: #b4d000; }
+    .section { padding: 68px 0; }
+    .section-head { display: grid; grid-template-columns: .7fr 1.3fr; gap: 48px; margin-bottom: 36px; }
+    .label { color: #648b00; text-transform: uppercase; font-weight: 700; font-size: 11px; letter-spacing: .17em; margin: 6px 0 0; }
+    h2 { color: var(--navy); font-size: clamp(29px, 4vw, 42px); line-height: 1.16; letter-spacing: -.025em; margin-bottom: 16px; }
+    .lead { font-size: 17px; color: #4d5c63; margin-bottom: 14px; }
+    .section p:last-child { margin-bottom: 0; }
+    .facts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 28px; }
+    .fact { padding: 22px 22px 24px; background: var(--pale); border-top: 3px solid var(--teal); }
+    .fact strong { display: block; color: var(--navy); font-size: 15px; margin-bottom: 7px; }
+    .fact p { color: #56666d; font-size: 14px; margin: 0; }
+    .examples { background: #f5f8f8; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .video-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+    .video-card { background: #fff; border: 1px solid var(--line); transition: transform .2s ease, box-shadow .2s ease; }
+    .video-card:hover { transform: translateY(-3px); box-shadow: 0 12px 28px rgba(23,52,74,.09); }
+    .thumb-link { display: block; position: relative; overflow: hidden; background: #dce5e7; aspect-ratio: 16 / 9; }
+    .thumb-link img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform .3s ease; }
+    .video-card:hover .thumb-link img { transform: scale(1.035); }
+    .play { position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); width: 54px; height: 38px; border-radius: 10px; background: rgba(15,27,35,.87); display: grid; place-items: center; }
+    .play::after { content: ""; width: 0; height: 0; border-top: 7px solid transparent; border-bottom: 7px solid transparent; border-left: 11px solid white; margin-left: 3px; }
+    .video-copy { padding: 20px 20px 22px; }
+    .video-copy .mini { color: #648b00; text-transform: uppercase; letter-spacing: .13em; font-size: 10px; font-weight: 700; }
+    .video-copy h3 { color: var(--navy); font-size: 18px; line-height: 1.3; margin: 8px 0 8px; }
+    .video-copy p { color: var(--muted); font-size: 13px; margin-bottom: 12px; }
+    .video-link { text-decoration: none; font-size: 12px; font-weight: 700; color: #648b00; }
+    .video-link:hover { text-decoration: underline; }
+    .company { display: grid; grid-template-columns: .8fr 1.2fr; gap: 48px; align-items: start; }
+    .company-mark { background: #000; color: #fff; padding: 32px; min-height: 210px; display: flex; flex-direction: column; justify-content: space-between; }
+    .company-mark .big { font-size: clamp(38px, 5vw, 54px); font-weight: 800; letter-spacing: .04em; line-height: 1; }
+    .company-mark .sub { color: #d4ee29; font-size: 11px; letter-spacing: .17em; font-weight: 700; margin-top: 10px; }
+    .company-mark p { color: #d7e2e6; font-size: 13px; margin: 25px 0 0; }
+    .contact { background: var(--pale); padding: 34px; display: flex; align-items: center; justify-content: space-between; gap: 28px; margin-top: 58px; }
+    .contact h2 { font-size: 27px; margin-bottom: 7px; }
+    .contact p { color: #5b6b72; margin-bottom: 0; font-size: 14px; }
+    .button { display: inline-block; flex-shrink: 0; text-decoration: none; color: #fff; background: var(--navy); padding: 13px 18px; font-size: 12px; font-weight: 700; letter-spacing: .03em; border: 1px solid var(--navy); }
+    .button:hover { background: #fff; color: var(--navy); }
+    footer { background: #132c3e; color: #d5e0e4; padding: 28px 0; font-size: 11px; }
+    .footer-inner { display: flex; justify-content: space-between; gap: 20px; align-items: center; flex-wrap: wrap; }
+    .footer-brand { font-weight: 700; letter-spacing: .1em; color: #fff; }
+    .footer-note { max-width: 580px; color: #afc1c8; }
+    @media (max-width: 760px) {
+      .wrap { width: min(calc(100% - 32px), var(--max)); }
+      .header-inner { min-height: 82px; }
+      .alpha-symbol { width: 180px; max-width: 46vw; height: auto; }
+      .alpha-word { font-size: 18px; }
+      .header-label { display: none; }
+      .hero-inner { padding: 60px 0 65px; }
+      .section { padding: 50px 0; }
+      .section-head, .company { grid-template-columns: 1fr; gap: 16px; }
+      .facts, .video-grid { grid-template-columns: 1fr; }
+      .video-card { display: grid; grid-template-columns: 42% 1fr; }
+      .thumb-link { height: 100%; aspect-ratio: auto; min-height: 150px; }
+      .video-copy { padding: 16px; }
+      .video-copy h3 { font-size: 16px; }
+      .contact { align-items: flex-start; flex-direction: column; padding: 25px; margin-top: 42px; }
+    }
+    @media (max-width: 440px) {
+      .video-card { display: block; }
+      .thumb-link { aspect-ratio: 16 / 9; min-height: 0; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar"></div>
+  <header>
+    <div class="wrap header-inner">
+      <a class="alpha-brand" href="https://alpha.telluxgruppe.de/" target="_blank" rel="noopener" aria-label="ALPHA Entertainment Website">
+        <img class="alpha-symbol" src="alpha-entertainment-logo.png" alt="ALPHA Entertainment">
+        <span>
+          <span class="alpha-word">ALPHA</span>
+          <span class="alpha-sub">ENTERTAINMENT · FILM &amp; FERNSEHEN</span>
+        </span>
+      </a>
+      <div class="header-label">Eine Produktion aus Köln<br>im Auftrag von Sat.1</div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-inner">
+        <div class="kicker">ALPHA Entertainment präsentiert</div>
+        <h1>So gesehen –<br>Talk am Sonntag</h1>
+        <p>Persönliche Geschichten. Große Fragen. Unterschiedliche Perspektiven. Ein Gespräch darüber, was Menschen prägt und was im Leben wirklich zählt.</p>
+        <div class="hero-meta">Ein 20-minütiges Talkformat auf Sat.1</div>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <section class="section">
+      <div class="wrap">
+        <div class="section-head">
+          <div><p class="label">Das Format</p></div>
+          <div>
+            <h2>Gespräche über das, was uns bewegt.</h2>
+            <p class="lead">Wie handle ich verantwortlich in der Welt? Welche Werte zählen für mich? Was gibt mir Orientierung?</p>
+            <p>In „So gesehen – Talk am Sonntag“ spricht der Moderator mit Gästen über ihre Lebenswege, Lebenseinstellungen und persönlichen Überzeugungen. Zu Gast sind Menschen aus ganz unterschiedlichen Bereichen – etwa Schauspiel, Musik und Politik, aber auch Menschen, deren Geschichte etwas Besonderes erzählt.</p>
+            <p>Das Format entsteht im Auftrag von Sat.1 in Zusammenarbeit mit der katholischen Kirche. Daraus ergeben sich immer wieder soziale, ethische oder religiöse Perspektiven – ohne dass jedes Gespräch zwingend religiös ausgerichtet sein muss.</p>
+          </div>
+        </div>
+        <div class="facts">
+          <article class="fact">
+            <strong>Persönlich und nahbar</strong>
+            <p>Im Mittelpunkt stehen Menschen, Erfahrungen und Geschichten – nicht vorgefertigte Antworten.</p>
+          </article>
+          <article class="fact">
+            <strong>Offen für verschiedene Themen</strong>
+            <p>Von Familie und Zusammenhalt über gesellschaftliche Fragen bis hin zu Glaube und Werten.</p>
+          </article>
+          <article class="fact">
+            <strong>Seit 2011 auf Sendung</strong>
+            <p>Wir durften bereits mit zahlreichen spannenden Gästen und Persönlichkeiten drehen.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section examples">
+      <div class="wrap">
+        <div class="section-head">
+          <div><p class="label">Einblicke in die Sendung</p></div>
+          <div>
+            <h2>Ein Eindruck sagt mehr als viele Worte.</h2>
+            <p class="lead">Drei Beispiele aus unserem YouTube-Kanal geben einen Einblick in Ton, Atmosphäre und Vielfalt der Gespräche.</p>
+          </div>
+        </div>
+        <div class="video-grid">
+          <article class="video-card">
+            <a class="thumb-link" href="https://www.youtube.com/watch?v=kWggylObJLE&amp;list=PLLOyDyjHxVl1sHU2i8YxYjdTNOA7rO5DF&amp;index=5" target="_blank" rel="noopener" aria-label="Gesprächsbeispiel 1 auf YouTube ansehen">
+              <img src="https://img.youtube.com/vi/kWggylObJLE/maxresdefault.jpg" onerror="this.onerror=null;this.src='https://img.youtube.com/vi/kWggylObJLE/hqdefault.jpg'" alt="Thumbnail: Déborah Rosenkranz – In jeder Wunde steckt ein Wunder" loading="lazy">
+              <span class="play" aria-hidden="true"></span>
+            </a>
+            <div class="video-copy">
+              <div class="mini">GESPRÄCHSBEISPIEL 01</div>
+              <h3>Déborah Rosenkranz – In jeder Wunde steckt ein Wunder</h3>
+              <p>Ein persönliches Gespräch über Erfahrungen, Hoffnung und das, was Menschen stärkt.</p>
+              <a class="video-link" href="https://www.youtube.com/watch?v=kWggylObJLE&amp;list=PLLOyDyjHxVl1sHU2i8YxYjdTNOA7rO5DF&amp;index=5" target="_blank" rel="noopener">Auf YouTube ansehen ↗</a>
+            </div>
+          </article>
+          <article class="video-card">
+            <a class="thumb-link" href="https://www.youtube.com/watch?v=ckxu8FYBVCI&amp;list=PLLOyDyjHxVl1sHU2i8YxYjdTNOA7rO5DF&amp;index=3" target="_blank" rel="noopener" aria-label="Gesprächsbeispiel 2 auf YouTube ansehen">
+              <img src="https://img.youtube.com/vi/ckxu8FYBVCI/maxresdefault.jpg" onerror="this.onerror=null;this.src='https://img.youtube.com/vi/ckxu8FYBVCI/hqdefault.jpg'" alt="Thumbnail: Luigi Toscano – Fotograf gegen das Vergessen" loading="lazy">
+              <span class="play" aria-hidden="true"></span>
+            </a>
+            <div class="video-copy">
+              <div class="mini">GESPRÄCHSBEISPIEL 02</div>
+              <h3>Luigi Toscano – Fotograf gegen das Vergessen</h3>
+              <p>Ein Gespräch über Erinnerung, Menschlichkeit und die Kraft von Bildern.</p>
+              <a class="video-link" href="https://www.youtube.com/watch?v=ckxu8FYBVCI&amp;list=PLLOyDyjHxVl1sHU2i8YxYjdTNOA7rO5DF&amp;index=3" target="_blank" rel="noopener">Auf YouTube ansehen ↗</a>
+            </div>
+          </article>
+          <article class="video-card">
+            <a class="thumb-link" href="https://www.youtube.com/watch?v=H-QskD__U8k&amp;list=PLLOyDyjHxVl1sHU2i8YxYjdTNOA7rO5DF&amp;index=4" target="_blank" rel="noopener" aria-label="Gesprächsbeispiel 3 auf YouTube ansehen">
+              <img src="https://img.youtube.com/vi/H-QskD__U8k/maxresdefault.jpg" onerror="this.onerror=null;this.src='https://img.youtube.com/vi/H-QskD__U8k/hqdefault.jpg'" alt="Thumbnail: Willi Weitzel – Vom Wissen, Träumen und Glauben" loading="lazy">
+              <span class="play" aria-hidden="true"></span>
+            </a>
+            <div class="video-copy">
+              <div class="mini">GESPRÄCHSBEISPIEL 03</div>
+              <h3>Willi Weitzel – Vom Wissen, Träumen und Glauben</h3>
+              <p>Ein Gespräch über Neugier, Überzeugungen und die großen Fragen des Lebens.</p>
+              <a class="video-link" href="https://www.youtube.com/watch?v=H-QskD__U8k&amp;list=PLLOyDyjHxVl1sHU2i8YxYjdTNOA7rO5DF&amp;index=4" target="_blank" rel="noopener">Auf YouTube ansehen ↗</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="company">
+          <div>
+            <p class="label">Die Produktion</p>
+            <div class="company-mark">
+              <div>
+                <img src="alpha-entertainment-logo.png" alt="ALPHA Entertainment" style="display:block;width:min(100%,300px);height:auto;object-fit:contain;background:#000;margin-bottom:8px;">
+              </div>
+              <p>Film- und Fernsehproduktion aus Köln</p>
+            </div>
+          </div>
+          <div>
+            <h2>Erfahrung in Film und Fernsehen.</h2>
+            <p class="lead">ALPHA Entertainment ist eine Film- und Fernsehproduktion mit Sitz in Köln.</p>
+            <p>Im Auftrag von Sat.1 produzieren wir „So gesehen – Talk am Sonntag“ in Zusammenarbeit mit der katholischen Kirche. Seit 2011 setzen wir das Format mit Gästen aus unterschiedlichen Lebens- und Arbeitsbereichen um.</p>
+            <p>Unser Anspruch: Gespräche, die Raum für persönliche Erfahrungen, neue Gedanken und unterschiedliche Perspektiven schaffen – offen, respektvoll und nah am Menschen.</p>
+            <p><a class="video-link" href="https://alpha.telluxgruppe.de/" target="_blank" rel="noopener">Mehr über ALPHA Entertainment ↗</a></p>
+          </div>
+        </div>
+
+        <div class="contact">
+          <div>
+            <h2>Interesse an einem Gespräch?</h2>
+            <p>Wir freuen uns auf den Austausch und beantworten gerne weitere Fragen zum Format und zur Produktion.</p>
+          </div>
+          <a class="button" href="mailto:mail@alpha-entertainment.de?subject=So%20gesehen%20%E2%80%93%20Talk%20am%20Sonntag">Kontakt zur Produktion ↗</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-inner">
+      <div>
+        <div class="footer-brand">ALPHA Entertainment</div>
+        <div>Film- und Fernsehproduktion GmbH · Köln</div>
+      </div>
+      <div class="footer-note">„So gesehen – Talk am Sonntag“ wird im Auftrag von Sat.1 in Zusammenarbeit mit der katholischen Kirche produziert. Diese Seite dient der kompakten Vorstellung des Formats.</div>
+    </div>
+  </footer>
+</body>
+</html>
