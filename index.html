@@ -29,8 +29,7 @@
     .header-inner { min-height: 96px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
     .alpha-brand { display: inline-flex; align-items: center; gap: 15px; text-decoration: none; color: var(--navy); }
     .alpha-symbol { width: 220px; max-width: 42vw; height: auto; display: block; flex: 0 1 220px; }
-    .alpha-word { font-size: 22px; font-weight: 800; letter-spacing: .045em; line-height: 1.1; }
-    .alpha-sub { display: block; margin-top: 5px; color: var(--muted); font-size: 9px; font-weight: 700; letter-spacing: .19em; }
+    .alpha-sub { display: block; color: var(--muted); font-size: 9px; font-weight: 700; letter-spacing: .12em; }
     .header-label { font-size: 11px; text-transform: uppercase; letter-spacing: .14em; color: var(--muted); text-align: right; }
     .hero { position: relative; overflow: hidden; background: var(--navy); color: #fff; }
     .hero::after { content: ""; position: absolute; width: 420px; height: 420px; border: 1px solid rgba(255,255,255,.14); border-radius: 50%; right: -130px; top: -170px; box-shadow: 0 0 0 45px rgba(255,255,255,.025), 0 0 0 90px rgba(255,255,255,.02); }
@@ -84,7 +83,6 @@
       .wrap { width: min(calc(100% - 32px), var(--max)); }
       .header-inner { min-height: 82px; }
       .alpha-symbol { width: 180px; max-width: 46vw; height: auto; }
-      .alpha-word { font-size: 18px; }
       .header-label { display: none; }
       .hero-inner { padding: 60px 0 65px; }
       .section { padding: 50px 0; }
@@ -112,10 +110,7 @@
     <div class="wrap header-inner">
       <a class="alpha-brand" href="https://alpha.telluxgruppe.de/" target="_blank" rel="noopener" aria-label="ALPHA Entertainment Website">
         <img class="alpha-symbol" src="alpha-entertainment-logo.png" alt="ALPHA Entertainment">
-        <span>
-          <span class="alpha-word">ALPHA</span>
-          <span class="alpha-sub">FILM- UND FERNSEHPRODUKTION</span>
-        </span>
+        <span class="alpha-sub">FILM- UND FERNSEHPRODUKTION</span>
       </a>
       <div class="header-label">Eine Produktion aus Köln<br>im Auftrag von Sat.1</div>
     </div>
